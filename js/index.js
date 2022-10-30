@@ -6,7 +6,7 @@ let noHayTLP = 0;
 opciones de respuesta del usuario son A,B o C y tambien cuenta las respuestas*/
 
 function preguntar(textoPregunta) {
-    let respuesta = prompt(textoPregunta)
+    let respuesta = prompt(textoPregunta).toUpperCase()
     while (respuesta != "ESC") {
         switch (respuesta) {
             case "A":
