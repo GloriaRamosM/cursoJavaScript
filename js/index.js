@@ -64,3 +64,40 @@ preguntar("8.Sueles enojarte facilmente, llegando a estados de ira y/o peleas qu
 preguntar("9.Tienes ideas paranoides ocasionalmente, sobre todo si te sientes estresada/o?")
 
 darResultados()
+
+
+const servicios = [
+    { id: 1, nombre: "consulta psicologica", precio: 1500 },
+    { id: 2, nombre: "consulta psiquiatrica", precio: 1800 },
+    { id: 3, nombre: "seminario psicoeducativo", precio: 1200 },
+    { id: 4, nombre: "grupo de apoyo ", precio: 700 },
+    { id: 5, nombre: "evaluacion diagnostica", precio: 850 },
+];
+
+
+
+let nombreDeServicio = prompt(" Ingrese el servicio que necesita").toLowerCase();
+
+
+
+for (const servicio of servicios) {
+    switch (nombreDeServicio) {
+        case "consulta psicologica":
+            alert("ha seleccionado consulta psicologica, se le contactare via correo electronico con la informacion de nuestros profesionales");
+            break
+        case "consulta psiquiatrica":
+            alert("ha seleccionado consulta psiquiatrica, se le contactare via correo electronico con la informacion de nuestros profesionales");
+            break
+        case "seminario psicoeducativo":
+            alert("ha seleccionado seminario psicoeducativo la informacion sera enviada a su correo electronico");
+        case "grupo de apoyo":
+            alert("Para ingresar en los grupos de apoyo sera contactdo a la brevedad posible");
+            break
+        case "evaluacion diagnostica":
+            alert("Sera contactado para coordinar su cita de evaluacion");
+            break
+        default:
+            alert(" no contamos con ese servicio, los servicios disponibles para usted son: consulta psicologica, consulta psiquiatrica, seminario psicoeducativo, grupo de apoyo y evaluacion diagnostica")
+            break
+    };
+};
