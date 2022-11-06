@@ -1,3 +1,5 @@
+
+/*
 let diagnosticoTLP = 0;
 let criteriosTLP = 0;
 let noHayTLP = 0;
@@ -5,6 +7,8 @@ let noHayTLP = 0;
 /* Esta funcion es la pregunta para recolectar los datos, el descarte de criterios, 
 opciones de respuesta del usuario son A,B o C y tambien cuenta las respuestas*/
 
+
+/*
 function preguntar(textoPregunta) {
     let respuesta = prompt(textoPregunta).toUpperCase()
     while (respuesta != "ESC") {
@@ -29,7 +33,7 @@ function preguntar(textoPregunta) {
 }
 
 /* Esta funcion es  la que interpreta, segun la cantidad de respuestas y le muestra al usuario el resultado final */
-
+/*
 function darResultados() {
     if (diagnosticoTLP >= 5) {
         alert("Cumples con los suficientes criterios diagnosticos para el trastorno de personalidad Limite, (estos valores son solo informativos)")
@@ -44,7 +48,7 @@ function darResultados() {
 
 /* Aca estoy usando las funciones en cada momento que las necesito,
  tiene un orden, primero pregunta y recolecta los datos, y luego interpreta*/
-
+/*
 preguntar("1.Realizas muchos esfuerzos para evitar el abandono o sentirte desamparado?")
 
 preguntar("2.Sientes que tus relaciones son inestables y/o intensas la mayoria de las veces?")
@@ -65,39 +69,96 @@ preguntar("9.Tienes ideas paranoides ocasionalmente, sobre todo si te sientes es
 
 darResultados()
 
+*/
+
 
 const servicios = [
     { id: 1, nombre: "consulta psicologica", precio: 1500 },
     { id: 2, nombre: "consulta psiquiatrica", precio: 1800 },
     { id: 3, nombre: "seminario psicoeducativo", precio: 1200 },
-    { id: 4, nombre: "grupo de apoyo ", precio: 700 },
+    { id: 4, nombre: "grupo de apoyo", precio: 700 },
     { id: 5, nombre: "evaluacion diagnostica", precio: 850 },
 ];
 
 
+let mensajeOpciones = "";
 
+const seleccionDeOpcion = prompt("Seleccione A para consultar servicios y precios , o seleccione B para contratar un servicio").toUpperCase();
+
+if (seleccionDeOpcion === "A") {
+
+    for (let index = 0; index < servicios.length; index++) {
+        const servicio = servicios[index];
+
+        mensajeOpciones = mensajeOpciones + "El servicio de " + servicio.nombre + " tiene un valor de " + servicio.precio + " pesos argentinos ,";
+    }
+
+    alert(mensajeOpciones);
+}
+
+const serviciosSeleccionados = [];
+let mensajeProductosSeleccionados = "";
+
+
+if (seleccionDeOpcion === "B") {
+    for (let index = 0; index < servicios.length; index++) {
+        const servicio = servicios[index];
+
+        const seleccionServicio = prompt(`"Si desea aquirir el servicio de " ${servicio.nombre} que tiene un valor de ${servicio.precio} marque Si, de lo contrario marque No`).toLowerCase();
+
+        if (seleccionServicio === "si") {
+            serviciosSeleccionados.push(servicio);
+        }
+    }
+    let sumaServicios = 0;
+
+    for (let index = 0; index < serviciosSeleccionados.length; index++) {
+        const servicioSeleccionado = serviciosSeleccionados[index];
+
+        mensajeProductosSeleccionados = mensajeProductosSeleccionados + "Usted selecciono el servicio de " + servicioSeleccionado.nombre + " con un valor de " + servicioSeleccionado.precio +" \n";
+
+      sumaServicios =  sumaServicios + servicioSeleccionado.precio
+    }
+
+
+
+
+    alert(mensajeProductosSeleccionados + " y su total a pagar es de " + sumaServicios);
+}
+
+console.log(serviciosSeleccionados);
+
+
+
+
+
+
+
+// Opcion C incluir 
+
+/*
+
+const servicios = [
+    { id: 1, nombre: "consulta psicologica", precio: 1500 },
+    { id: 2, nombre: "consulta psiquiatrica", precio: 1800 },
+    { id: 3, nombre: "seminario psicoeducativo", precio: 1200 },
+    { id: 4, nombre: "grupo de apoyo", precio: 700 },
+    { id: 5, nombre: "evaluacion diagnostica", precio: 850 },
+];
+
+*/
+
+/*
 let nombreDeServicio = prompt(" Ingrese el servicio que necesita").toLowerCase();
 
+const servicioSeleccionado = servicios.find(servicio => {
+    if (nombreDeServicio === servicio.nombre) {
+        return true
+    }
+});
+
+alert(" Ud selecciono " + servicioSeleccionado.nombre + " y ese servicio tiene un valor de " + servicioSeleccionado.precio)
+*/
 
 
-for (const servicio of servicios) {
-    switch (nombreDeServicio) {
-        case "consulta psicologica":
-            alert("ha seleccionado consulta psicologica, se le contactare via correo electronico con la informacion de nuestros profesionales");
-            break
-        case "consulta psiquiatrica":
-            alert("ha seleccionado consulta psiquiatrica, se le contactare via correo electronico con la informacion de nuestros profesionales");
-            break
-        case "seminario psicoeducativo":
-            alert("ha seleccionado seminario psicoeducativo la informacion sera enviada a su correo electronico");
-        case "grupo de apoyo":
-            alert("Para ingresar en los grupos de apoyo sera contactdo a la brevedad posible");
-            break
-        case "evaluacion diagnostica":
-            alert("Sera contactado para coordinar su cita de evaluacion");
-            break
-        default:
-            alert(" no contamos con ese servicio, los servicios disponibles para usted son: consulta psicologica, consulta psiquiatrica, seminario psicoeducativo, grupo de apoyo y evaluacion diagnostica")
-            break
-    };
-};
+
