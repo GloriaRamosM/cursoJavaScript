@@ -1,5 +1,5 @@
 
-/*
+
 let diagnosticoTLP = 0;
 let criteriosTLP = 0;
 let noHayTLP = 0;
@@ -7,8 +7,8 @@ let noHayTLP = 0;
 /* Esta funcion es la pregunta para recolectar los datos, el descarte de criterios, 
 opciones de respuesta del usuario son A,B o C y tambien cuenta las respuestas*/
 
-
 /*
+
 function preguntar(textoPregunta) {
     let respuesta = prompt(textoPregunta).toUpperCase()
     while (respuesta != "ESC") {
@@ -32,6 +32,7 @@ function preguntar(textoPregunta) {
     }
 }
 
+*/
 /* Esta funcion es  la que interpreta, segun la cantidad de respuestas y le muestra al usuario el resultado final */
 /*
 function darResultados() {
@@ -45,10 +46,11 @@ function darResultados() {
         alert("No cumples con los criterios de TLP")
     }
 }
-
+*/
 /* Aca estoy usando las funciones en cada momento que las necesito,
  tiene un orden, primero pregunta y recolecta los datos, y luego interpreta*/
-/*
+
+ /*
 preguntar("1.Realizas muchos esfuerzos para evitar el abandono o sentirte desamparado?")
 
 preguntar("2.Sientes que tus relaciones son inestables y/o intensas la mayoria de las veces?")
@@ -70,7 +72,7 @@ preguntar("9.Tienes ideas paranoides ocasionalmente, sobre todo si te sientes es
 darResultados()
 
 */
-
+/*
 
 const servicios = [
     { id: 1, nombre: "consulta psicologica", precio: 1500 },
@@ -115,9 +117,9 @@ if (seleccionDeOpcion === "B") {
     for (let index = 0; index < serviciosSeleccionados.length; index++) {
         const servicioSeleccionado = serviciosSeleccionados[index];
 
-        mensajeProductosSeleccionados = mensajeProductosSeleccionados + "Usted selecciono el servicio de " + servicioSeleccionado.nombre + " con un valor de " + servicioSeleccionado.precio +" \n";
-
-      sumaServicios =  sumaServicios + servicioSeleccionado.precio
+        mensajeProductosSeleccionados = mensajeProductosSeleccionados + "Usted selecciono el servicio de " + servicioSeleccionado.nombre + " con un valor de " + servicioSeleccionado.precio + " \n";
+ 
+        sumaServicios = sumaServicios + servicioSeleccionado.precio
     }
 
 
@@ -131,7 +133,7 @@ console.log(serviciosSeleccionados);
 
 
 
-
+*/
 
 
 // Opcion C incluir 
@@ -159,6 +161,9 @@ const servicioSeleccionado = servicios.find(servicio => {
 
 alert(" Ud selecciono " + servicioSeleccionado.nombre + " y ese servicio tiene un valor de " + servicioSeleccionado.precio)
 */
+
+
+
 
 
 

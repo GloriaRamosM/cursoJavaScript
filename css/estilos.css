@@ -1,13 +1,71 @@
-.imagenBindex {
-    background-color: #4649FF;
-    background-attachment:fixed;
-    background-position:center;
-    background-repeat:no-repeat;
-    background-size:cover;
-    
+.navColorbg {
+  background-color: #464C69;
 }
 
-.imagenLogo{
-    height: 200px;
-    width: 200px;
+.imagenLogo {
+  margin-left: 30px;
+  width: 70px;
+  height: 70px;
+  background-color: #EAEBF2;
 }
+
+h1 {
+  padding: 50px;
+  font-family: "Trirong", serif;
+}
+
+p {
+  font-family: "Nunito", sans-serif;
+}
+
+.linkA {
+  color: #EAEBF2;
+}
+
+.navBarPropio {
+  gap: 80px;
+}
+
+.pNav {
+  display: flex;
+  justify-content: center;
+}
+
+.navLinkPropio {
+  font-family: "Trirong", serif;
+}
+
+.bgcolorindex {
+  background-color: #F4F6FB;
+}
+
+.imagenIndexApoyo {
+  width: auto;
+  padding: 50px;
+}
+
+.h1Index {
+  padding: 50px;
+}
+
+.bgColorSintomas {
+  background-color: #F4F6FB;
+}
+
+.seccionSintomas {
+  padding: 50px;
+}
+
+.bgTestD {
+  background-color: #F6EEFC;
+}
+
+.pParaMover {
+  padding: 20px;
+}
+
+.pParaMover1 {
+  padding: 20px;
+}
+
+/*# sourceMappingURL=estilos.css.map */

@@ -1,48 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilos.css">
-    <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <title>Document</title>
 </head>
-<body>
-    
 
-    <header>
-        <nav class="navbar navbar-expand-lg bg-white">
-            <div class="container-fluid">
-              <a class="navbar-brand" href=""> <img class="imagenLogo" src="./imagenes/logonavbar.png" alt=""></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link " aria-current="page" href="../index.html">Acerca del TLP</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#"> Test Diagnostico </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#"> Sintomas </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#"> Ayuda </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-    </header>
+<body class="bgTestD">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+
+  <!-- Barra de navegacion -->
+
+  <header>
+    <nav class="navbar navbar-expand-lg navColorbg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html"> <img class="imagenLogo" src="../imagenes/logonavegador.png"
+            alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse pNav " id="navbarNav">
+          <ul class="navbar-nav  navBarPropio ">
+            <li class="nav-item  navLinkPropio ">
+              <a class="nav-link  linkA " aria-current="page" href="/index.html">Acerca del TLP</a>
+            </li>
+            <li class="nav-item navLinkPropio ">
+              <a class="nav-link  linkA" href="./test.html"> Test Diagnostico </a>
+            </li>
+            <li class="nav-item  navLinkPropio">
+              <a class="nav-link linkA " href="./sintomas.html"> Sintomas </a>
+            </li>
+            <li class="nav-item  navLinkPropio">
+              <a class="nav-link linkA " href="./servicios.html"> Ayuda / Servicios
+
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <h1 class="text-center"> Autotest Diagnostico</h1>
+  <section>
+    <p class="pParaMover text-center">
+      Un test psicológico o prueba psicológica es un instrumento experimental que tiene por objeto medir o evaluar una
+      característica psicológica específica, o los rasgos generales de la personalidad de un individuo. Como
+      justificación teórica de la validez de una medición mediante el uso de test psicológicos, se argumenta que el
+      comportamiento individual que los reactivos de la prueba provoca puede ser valorado en comparación estadística o
+      cualitativa con el de otros individuos sometidos a la misma situación experimental, con lo que se da lugar a una
+      determinada clasificación del sujeto.
+    </p>
+
+    <p class="pParaMover1 text-center">
+      En esta seccion habilitamos para ti, un autotest breve pero basado en el DSM-5 , El Manual Diagnóstico y
+      Estadístico de Trastornos Mentales, si bien no puedes autodiagnosticarte, puedes reflexionar acerca del resultado
+      de este test, y tomar las medidas necesarias para seguir mirandote y cuidandote
+
+    </p>
+
+  </section>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
     crossorigin="anonymous"></script>
-    <script src="./index.js"></script>
+  <script src="./index.js"></script>
 </body>
+
 </html>
