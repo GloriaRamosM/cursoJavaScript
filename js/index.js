@@ -7,7 +7,7 @@ let noHayTLP = 0;
 /* Esta funcion es la pregunta para recolectar los datos, el descarte de criterios, 
 opciones de respuesta del usuario son A,B o C y tambien cuenta las respuestas*/
 
-/*
+
 
 function preguntar(textoPregunta) {
     let respuesta = prompt(textoPregunta).toUpperCase()
@@ -32,9 +32,9 @@ function preguntar(textoPregunta) {
     }
 }
 
-*/
+
 /* Esta funcion es  la que interpreta, segun la cantidad de respuestas y le muestra al usuario el resultado final */
-/*
+
 function darResultados() {
     if (diagnosticoTLP >= 5) {
         alert("Cumples con los suficientes criterios diagnosticos para el trastorno de personalidad Limite, (estos valores son solo informativos)")
@@ -46,11 +46,11 @@ function darResultados() {
         alert("No cumples con los criterios de TLP")
     }
 }
-*/
+
 /* Aca estoy usando las funciones en cada momento que las necesito,
  tiene un orden, primero pregunta y recolecta los datos, y luego interpreta*/
 
- /*
+ 
 preguntar("1.Realizas muchos esfuerzos para evitar el abandono o sentirte desamparado?")
 
 preguntar("2.Sientes que tus relaciones son inestables y/o intensas la mayoria de las veces?")
@@ -71,24 +71,9 @@ preguntar("9.Tienes ideas paranoides ocasionalmente, sobre todo si te sientes es
 
 darResultados()
 
-*/
-/*
-
-const servicios = [
-    { id: 1, nombre: "consulta psicologica", precio: 1500 },
-    { id: 2, nombre: "consulta psiquiatrica", precio: 1800 },
-    { id: 3, nombre: "seminario psicoeducativo", precio: 1200 },
-    { id: 4, nombre: "grupo de apoyo", precio: 700 },
-    { id: 5, nombre: "evaluacion diagnostica", precio: 850 },
-];
 
 
-let mensajeOpciones = "";
-
-const seleccionDeOpcion = prompt("Seleccione A para consultar servicios y precios , o seleccione B para contratar un servicio").toUpperCase();
-
-if (seleccionDeOpcion === "A") {
-
+function consultarServicios(servicios){
     for (let index = 0; index < servicios.length; index++) {
         const servicio = servicios[index];
 
@@ -98,11 +83,7 @@ if (seleccionDeOpcion === "A") {
     alert(mensajeOpciones);
 }
 
-const serviciosSeleccionados = [];
-let mensajeProductosSeleccionados = "";
-
-
-if (seleccionDeOpcion === "B") {
+function contratarServicios(servicios){
     for (let index = 0; index < servicios.length; index++) {
         const servicio = servicios[index];
 
@@ -128,17 +109,25 @@ if (seleccionDeOpcion === "B") {
     alert(mensajeProductosSeleccionados + " y su total a pagar es de " + sumaServicios);
 }
 
-console.log(serviciosSeleccionados);
 
+function buscarServicio(servicios){
+    let nombreDeServicio = prompt(" Ingrese el servicio que necesita").toLowerCase();
 
-
-
-*/
-
-
-// Opcion C incluir 
-
-/*
+    const servicioSeleccionado = servicios.find(servicio => {
+        if (nombreDeServicio === servicio.nombre) {
+            return true
+        }
+    
+    });
+    
+    if(!servicioSeleccionado){
+        alert(" este servicio no fue encontrado");
+    }
+    else{
+        alert(" Ud selecciono " + servicioSeleccionado.nombre + " y ese servicio tiene un valor de " + servicioSeleccionado.precio)
+    }
+    
+}
 
 const servicios = [
     { id: 1, nombre: "consulta psicologica", precio: 1500 },
@@ -148,19 +137,37 @@ const servicios = [
     { id: 5, nombre: "evaluacion diagnostica", precio: 850 },
 ];
 
-*/
 
-/*
-let nombreDeServicio = prompt(" Ingrese el servicio que necesita").toLowerCase();
+let mensajeOpciones = "";
 
-const servicioSeleccionado = servicios.find(servicio => {
-    if (nombreDeServicio === servicio.nombre) {
-        return true
-    }
-});
+const seleccionDeOpcion = prompt("Seleccione A para consultar servicios y precios , o seleccione B para contratar un servicio o seleccione C si quieres buscar la existencia de un servicio").toUpperCase();
 
-alert(" Ud selecciono " + servicioSeleccionado.nombre + " y ese servicio tiene un valor de " + servicioSeleccionado.precio)
-*/
+if (seleccionDeOpcion === "A") {
+
+consultarServicios(servicios)
+}
+
+
+const serviciosSeleccionados = [];
+let mensajeProductosSeleccionados = "";
+
+
+if (seleccionDeOpcion === "B") {
+    contratarServicios(servicios);
+}
+
+
+
+if(seleccionDeOpcion === "C"){
+
+buscarServicio(servicios)
+   
+}
+
+
+
+
+
 
 
 
