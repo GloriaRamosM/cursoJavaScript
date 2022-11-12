@@ -50,7 +50,7 @@ function darResultados() {
 /* Aca estoy usando las funciones en cada momento que las necesito,
  tiene un orden, primero pregunta y recolecta los datos, y luego interpreta*/
 
- 
+
 preguntar("1.Realizas muchos esfuerzos para evitar el abandono o sentirte desamparado?")
 
 preguntar("2.Sientes que tus relaciones son inestables y/o intensas la mayoria de las veces?")
@@ -73,7 +73,10 @@ darResultados()
 
 
 
-function consultarServicios(servicios){
+function consultarServicios(servicios) {
+
+    let mensajeOpciones = "";
+
     for (let index = 0; index < servicios.length; index++) {
         const servicio = servicios[index];
 
@@ -83,7 +86,11 @@ function consultarServicios(servicios){
     alert(mensajeOpciones);
 }
 
-function contratarServicios(servicios){
+function contratarServicios(servicios) {
+
+    const serviciosSeleccionados = [];
+    let mensajeProductosSeleccionados = "";
+
     for (let index = 0; index < servicios.length; index++) {
         const servicio = servicios[index];
 
@@ -99,7 +106,7 @@ function contratarServicios(servicios){
         const servicioSeleccionado = serviciosSeleccionados[index];
 
         mensajeProductosSeleccionados = mensajeProductosSeleccionados + "Usted selecciono el servicio de " + servicioSeleccionado.nombre + " con un valor de " + servicioSeleccionado.precio + " \n";
- 
+
         sumaServicios = sumaServicios + servicioSeleccionado.precio
     }
 
@@ -110,23 +117,23 @@ function contratarServicios(servicios){
 }
 
 
-function buscarServicio(servicios){
+function buscarServicio(servicios) {
     let nombreDeServicio = prompt(" Ingrese el servicio que necesita").toLowerCase();
 
     const servicioSeleccionado = servicios.find(servicio => {
         if (nombreDeServicio === servicio.nombre) {
             return true
         }
-    
+
     });
-    
-    if(!servicioSeleccionado){
+
+    if (!servicioSeleccionado) {
         alert(" este servicio no fue encontrado");
     }
-    else{
+    else {
         alert(" Ud selecciono " + servicioSeleccionado.nombre + " y ese servicio tiene un valor de " + servicioSeleccionado.precio)
     }
-    
+
 }
 
 const servicios = [
@@ -138,18 +145,14 @@ const servicios = [
 ];
 
 
-let mensajeOpciones = "";
 
 const seleccionDeOpcion = prompt("Seleccione A para consultar servicios y precios , o seleccione B para contratar un servicio o seleccione C si quieres buscar la existencia de un servicio").toUpperCase();
 
+
+
 if (seleccionDeOpcion === "A") {
-
-consultarServicios(servicios)
+    consultarServicios(servicios);
 }
-
-
-const serviciosSeleccionados = [];
-let mensajeProductosSeleccionados = "";
 
 
 if (seleccionDeOpcion === "B") {
@@ -157,11 +160,9 @@ if (seleccionDeOpcion === "B") {
 }
 
 
+if (seleccionDeOpcion === "C") {
+    buscarServicio(servicios);
 
-if(seleccionDeOpcion === "C"){
-
-buscarServicio(servicios)
-   
 }
 
 
