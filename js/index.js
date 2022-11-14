@@ -71,7 +71,7 @@ preguntar("9.Tienes ideas paranoides ocasionalmente, sobre todo si te sientes es
 
 darResultados()
 
-
+// ACA HAY TRES FUNCIONES PARA CADA UNA DE LAS OPCIONES A B O C DEPENDE DE LA ELECCION DEL USUARIO
 
 function consultarServicios(servicios) {
 
@@ -136,6 +136,8 @@ function buscarServicio(servicios) {
 
 }
 
+// ARRAY Y UN OBJETO DENTRO DEL ARRAY, DONDE TENGO PLASMADOS LOS SERVICIOS QUE OFRECE EL SITIO
+
 const servicios = [
     { id: 1, nombre: "consulta psicologica", precio: 1500 },
     { id: 2, nombre: "consulta psiquiatrica", precio: 1800 },
@@ -144,7 +146,7 @@ const servicios = [
     { id: 5, nombre: "evaluacion diagnostica", precio: 850 },
 ];
 
-
+// SE LE PIDE AL USUARIO UNA ELECCION A B O C SEGUN CORRESPONDA,  Y SEGUN LA RESPUESTA SE DESENVUELVE UNA FUNCION
 
 const seleccionDeOpcion = prompt("Seleccione A para consultar servicios y precios , o seleccione B para contratar un servicio o seleccione C si quieres buscar la existencia de un servicio").toUpperCase();
 
