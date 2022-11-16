@@ -171,7 +171,7 @@ if (seleccionDeOpcion === "C") {
 
 
 
-//////////////// GUARDAR LOCALMENTE MI ARRAY Y ADEMAS AGREGAR UNA SECCION CON LOS SERVICIOS ( MEJORAR)////
+//////////////// GUARDAR LOCALMENTE MI ARRAY Y ADEMAS AGREGAR UNA SECCION CON LOS SERVICIOS ( MEJORAR) ejercicio de clase ////
 
 localStorage.setItem("servicios", JSON.stringify(servicios));
 
