@@ -138,7 +138,7 @@ function buscarServicio(servicios) {
 
 // ARRAY Y UN OBJETO DENTRO DEL ARRAY, DONDE TENGO PLASMADOS LOS SERVICIOS QUE OFRECE EL SITIO
 
-const servicios = [
+let servicios = [
     { id: 1, nombre: "consulta psicologica", precio: 1500 },
     { id: 2, nombre: "consulta psiquiatrica", precio: 1800 },
     { id: 3, nombre: "seminario psicoeducativo", precio: 1200 },
@@ -171,6 +171,36 @@ if (seleccionDeOpcion === "C") {
 
 
 
+//////////////// GUARDAR LOCALMENTE MI ARRAY Y ADEMAS AGREGAR UNA SECCION CON LOS SERVICIOS ( MEJORAR)////
+
+localStorage.setItem("servicios", JSON.stringify(servicios));
+
+
+
+let servicioStorage = JSON.parse(localStorage.getItem("servicios"));
+
+if (servicioStorage.length > 0) {
+    servicios = servicioStorage;
+} else {
+    let seccionServicios = document.getElementById("seccionServicios")
+    let div = document.createElement("div");
+    div.innerHTML = "No hay productos en el carrito";
+
+    seccionServicios.append(div);
+}
+
+servicios.forEach(item => {
+    let seccionServicios = document.getElementById("seccionServicios")
+    let div = document.createElement("div");
+    div.innerHTML = `
+
+    <p> Servicio: ${item.nombre}</p>
+    <b>$${item.precio}</b>
+    
+  ` ;
+    div.className = ("morado")
+    seccionServicios.append(div);
+});
 
 
 
