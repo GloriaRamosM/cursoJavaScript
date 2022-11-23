@@ -123,6 +123,7 @@ servicios.forEach(item => {
 
     <p> Servicio: ${item.nombre}</p>
     <b>$${item.precio}</b>
+    <button> Agregar </button>
     
   ` ;
     div.className = ("morado")
