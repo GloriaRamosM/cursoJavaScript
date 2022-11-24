@@ -263,32 +263,18 @@ aa.addEventListener("click", () => {
 
 function darResultados() {
     if (diagnosticoTLP >= 5) {
-        let resultado = document.getElementById("parrafoDeResultados");
-        parrafoDeResultados.innerHTML = `
-<p>
-Resultado: Cumples con los suficientes criterios diagnosticos para el trastorno de personalidad Limite, (estos valores son solo informativos </p>
-`
-        resultado.append(p);
+        Swal.fire('Cumples con los criterios suficientes para el trastorno de personalidad Limite (estos valores son solo informativos)')
+
 
     }
     else if (criteriosTLP >= 5) {
 
-        let resultado = document.getElementById("parrafoDeResultados");
-        parrafoDeResultados.innerHTML = `
-<p>
-Resultado: Cumples con algunos criterios diagnosticos para el trastorno de personalidad Limite , sin llegar a cumplir con los suficientes criterios para el diagnostico </p>
-`
-        resultado.append(p);
+        Swal.fire('Cumples con algunos criterios diagnosticos para el trastorno de personalidad Limite , sin llegar a cumplir con los suficientes criterios para el diagnostico')
 
     }
     else {
 
-        let resultado = document.getElementById("parrafoDeResultados");
-        parrafoDeResultados.innerHTML = `
-<p>
-Resultado: No cumples con los criterios de TLP </p>
-`
-        resultado.append(p);
+        Swal.fire('No cumples con los criterios para TLP')
 
 
     }
