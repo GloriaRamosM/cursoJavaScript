@@ -76,4 +76,45 @@ p {
   padding: 20px;
 }
 
+.preguntaTest {
+  font-family: "Nunito", sans-serif;
+  padding-left: 30px;
+  margin: 20px;
+  font-size: 20px;
+}
+
+.preguntasBoton {
+  color: white;
+  border: none;
+  background-color: #55596d;
+  font-family: "Nunito", sans-serif;
+  width: 300px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.preguntasBoton:hover {
+  background: #282b3a;
+}
+
+.seccionTest {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  margin: 30px;
+}
+
+.botonEnviar {
+  border: none;
+  margin: 30px;
+  background: #9095a8;
+  color: #F6EEFC;
+  margin-left: 200px;
+}
+
+.botonEnviar:hover {
+  background: rgb(34, 25, 41);
+}
+
 /*# sourceMappingURL=estilos.css.map */
