@@ -1,64 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/estilos.css">
 
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navColorbg">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html"> <img class="imagenLogo" src="../imagenes/logonavegador.png"
-                alt=""></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse  pNav" id="navbarNav">
-              <ul class="navbar-nav navBarPropio ">
-                <li class="nav-item  navLinkPropio">
-                  <a class="nav-link  linkA " aria-current="page" href="../index.html">Acerca del TLP</a>
-                </li>
-                <li class="nav-item navLinkPropio">
-                  <a class="nav-link linkA " href="./test.html"> Test Diagnostico </a>
-                </li>
-                <li class="nav-item navLinkPropio">
-                  <a class="nav-link linkA " href="./sintomas.html"> Sintomas </a>
-                </li>
-                <li class="nav-item navLinkPropio">
-                  <a class="nav-link linkA " href=""> Ayuda / Servicios
-    
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </header>
-    
-<h1 class="text-center"> Ayuda y servicios </h1>
+  <header>
+    <nav class="navbar navbar-expand-lg navColorbg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html"> <img class="imagenLogo" src="../imagenes/logonavegador.png"
+            alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse  pNav" id="navbarNav">
+          <ul class="navbar-nav navBarPropio ">
+            <li class="nav-item  navLinkPropio">
+              <a class="nav-link  linkA " aria-current="page" href="../index.html">Acerca del TLP</a>
+            </li>
+            <li class="nav-item navLinkPropio">
+              <a class="nav-link linkA " href="./test.html"> Test Diagnostico </a>
+            </li>
+            <li class="nav-item navLinkPropio">
+              <a class="nav-link linkA " href="./sintomas.html"> Sintomas </a>
+            </li>
+            <li class="nav-item navLinkPropio">
+              <a class="nav-link linkA " href=""> Ayuda / Servicios
+
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <h1 class="text-center"> Ayuda y servicios </h1>
 
 
-<section id="seccionServicios">
- <div>
-  
- </div>
-</section>
+  <section id="seccionServicios">
+
+    <div id="carrito">
+      <button id="botonCarrito"> Ir al Carrito</button>
+    </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    <div class="d-none" id="listaCompra">
+      <div id="total"></div>
+      <button id="comprar"> Comprar</button>
+    </div>
+
+    <div id="formularioCompra"></div>
+  </section>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
     crossorigin="anonymous"></script>
 
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="../js/servicios.js"></script>
 </body>
+
 </html>

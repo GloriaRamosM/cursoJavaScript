@@ -1,67 +1,4 @@
-// ACA HAY TRES FUNCIONES PARA CADA UNA DE LAS OPCIONES A B O C DEPENDE DE LA ELECCION DEL USUARIO
 
-function consultarServicios(servicios) {
-
-    let mensajeOpciones = "";
-
-    for (let index = 0; index < servicios.length; index++) {
-        const servicio = servicios[index];
-
-        mensajeOpciones = mensajeOpciones + "El servicio de " + servicio.nombre + " tiene un valor de " + servicio.precio + " pesos argentinos ,";
-    }
-
-    alert(mensajeOpciones);
-}
-
-function contratarServicios(servicios) {
-
-    const serviciosSeleccionados = [];
-    let mensajeProductosSeleccionados = "";
-
-    for (let index = 0; index < servicios.length; index++) {
-        const servicio = servicios[index];
-
-        const seleccionServicio = prompt(`"Si desea aquirir el servicio de " ${servicio.nombre} que tiene un valor de ${servicio.precio} marque Si, de lo contrario marque No`).toLowerCase();
-
-        if (seleccionServicio === "si") {
-            serviciosSeleccionados.push(servicio);
-        }
-    }
-    let sumaServicios = 0;
-
-    for (let index = 0; index < serviciosSeleccionados.length; index++) {
-        const servicioSeleccionado = serviciosSeleccionados[index];
-
-        mensajeProductosSeleccionados = mensajeProductosSeleccionados + "Usted selecciono el servicio de " + servicioSeleccionado.nombre + " con un valor de " + servicioSeleccionado.precio + " \n";
-
-        sumaServicios = sumaServicios + servicioSeleccionado.precio
-    }
-
-
-
-
-    alert(mensajeProductosSeleccionados + " y su total a pagar es de " + sumaServicios);
-}
-
-
-function buscarServicio(servicios) {
-    let nombreDeServicio = prompt(" Ingrese el servicio que necesita").toLowerCase();
-
-    const servicioSeleccionado = servicios.find(servicio => {
-        if (nombreDeServicio === servicio.nombre) {
-            return true
-        }
-
-    });
-
-    if (!servicioSeleccionado) {
-        alert(" este servicio no fue encontrado");
-    }
-    else {
-        alert(" Ud selecciono " + servicioSeleccionado.nombre + " y ese servicio tiene un valor de " + servicioSeleccionado.precio)
-    }
-
-}
 
 // ARRAY Y UN OBJETO DENTRO DEL ARRAY, DONDE TENGO PLASMADOS LOS SERVICIOS QUE OFRECE EL SITIO
 
@@ -73,36 +10,11 @@ let servicios = [
     { id: 5, nombre: "evaluacion diagnostica", precio: 850 },
 ];
 
-// SE LE PIDE AL USUARIO UNA ELECCION A B O C SEGUN CORRESPONDA,  Y SEGUN LA RESPUESTA SE DESENVUELVE UNA FUNCION
-
-const seleccionDeOpcion = prompt("Seleccione A para consultar servicios y precios , o seleccione B para contratar un servicio o seleccione C si quieres buscar la existencia de un servicio").toUpperCase();
-
-
-
-if (seleccionDeOpcion === "A") {
-    consultarServicios(servicios);
-}
-
-
-if (seleccionDeOpcion === "B") {
-    contratarServicios(servicios);
-}
-
-
-if (seleccionDeOpcion === "C") {
-    buscarServicio(servicios);
-
-}
-
-
-
-
+let carrito = [];
 
 //////////////// GUARDAR LOCALMENTE MI ARRAY Y ADEMAS AGREGAR UNA SECCION CON LOS SERVICIOS ( MEJORAR) ejercicio de clase  ////
 
 localStorage.setItem("servicios", JSON.stringify(servicios));
-
-
 
 let servicioStorage = JSON.parse(localStorage.getItem("servicios"));
 
@@ -117,18 +29,102 @@ if (servicioStorage.length > 0) {
 }
 
 servicios.forEach(item => {
-    let seccionServicios = document.getElementById("seccionServicios")
+    let seccionServicios = document.getElementById("carrito")
     let div = document.createElement("div");
     div.innerHTML = `
 
     <p> Servicio: ${item.nombre}</p>
     <b>$${item.precio}</b>
-    <button> Agregar </button>
+    <button class="botonComprar" id="${item.id}" > Agregar </button>
     
   ` ;
     div.className = ("morado")
-    seccionServicios.append(div);
+    seccionServicios.prepend(div);
 });
+
+
+
+let botones = document.getElementsByClassName("botonComprar");
+
+for (let i = 0; i < botones.length; i++) {
+    let boton = botones[i];
+    boton.addEventListener("click", event => {
+        const id = event.target.id;
+        const servicioSeleccionado = servicios.find(servicio => servicio.id === parseInt(id));
+        carrito.push(servicioSeleccionado);
+        event.target.setAttribute("disabled", "true");
+    });
+
+};
+
+let botonCarrito = document.getElementById("botonCarrito");
+botonCarrito.addEventListener("click", () => {
+    document.getElementById("carrito").innerHTML = ""
+
+    document.getElementById("listaCompra").setAttribute("class", "");
+
+    let listaCompra = document.getElementById("listaCompra");
+
+    let total = 0;
+
+    carrito.forEach(item => {
+        let div = document.createElement("div");
+        div.innerHTML = `
+            <p> Servicio: ${item.nombre}</p>
+            <b>$${item.precio}</b>
+        `;
+        div.className = ("morado")
+        listaCompra.prepend(div);
+
+        total = total + item.precio
+
+
+    });
+
+    let div = document.createElement("div");
+    div.innerHTML = `
+    <h3> Total = ${total} </h3>
+    `
+    document.getElementById("total").append(div);
+});
+
+let botonComprar = document.getElementById("comprar");
+botonComprar.addEventListener("click", () => {
+    let formularioCompra = document.getElementById("formularioCompra");
+    formularioCompra.innerHTML = `
+        <form>
+            <div>
+                <label for="numeroTarjeta">Ingrese numero tarjeta</label>
+                <input type="text" id="numeroTarjeta">
+            </div>
+
+            <div>
+                <label for="nombreCompleto">Nombre Completo</label>
+                <input type="text" id="nombreCompleto">
+            </div>
+
+            <div>
+                <label for="CVV">CVV</label>
+                <input type="text" id="CVV">
+            </div>
+
+            <div>
+                <label for="vencimiento">Vencimiento</label>
+                <input type="date" id="vencimiento">
+            </div>
+
+            <button id="enviarFormulario" type="submit">Enviar</button>
+        </form>
+    `;
+
+    let enviarFormulario = document.getElementById("enviarFormulario");
+    enviarFormulario.addEventListener("click", (event) => {
+        event.preventDefault();
+        Swal.fire('Gracias por adquirir los servicios. Su compra fue procesada.')
+    });
+})
+
+
 
 
 
