@@ -35,13 +35,15 @@ if (servicioStorage.length > 0) {
 }
 
 servicios.forEach(item => {
+    let { nombre, id, precio } = item;
+
     let seccionServicios = document.getElementById("carrito")
     let div = document.createElement("div");
     div.innerHTML = `
 
-    <p> Servicio: ${item.nombre}</p>
-    <b>$${item.precio}</b>
-    <button class="botonComprar" id="${item.id}" > Agregar </button>
+    <p> Servicio: ${nombre}</p>
+    <b>$${precio}</b>
+    <button class="botonComprar" id="${id}" > Agregar </button>
     
   ` ;
     div.className = ("morado")
@@ -55,7 +57,7 @@ let botones = document.getElementsByClassName("botonComprar");
 for (let i = 0; i < botones.length; i++) {
     let boton = botones[i];
     boton.addEventListener("click", event => {
-        const id = event.target.id;
+        const { id } = event.target;
         const servicioSeleccionado = servicios.find(servicio => servicio.id === parseInt(id));
         carrito.push(servicioSeleccionado);
         event.target.setAttribute("disabled", "true");
@@ -74,15 +76,16 @@ botonCarrito.addEventListener("click", () => {
     let total = 0;
 
     carrito.forEach(item => {
+        let {nombre, precio} = item;
         let div = document.createElement("div");
         div.innerHTML = `
-            <p> Servicio: ${item.nombre}</p>
-            <b>$${item.precio}</b>
+            <p> Servicio: ${nombre}</p>
+            <b>$${precio}</b>
         `;
         div.className = ("morado")
         listaCompra.prepend(div);
 
-        total = total + item.precio
+        total = total + precio
 
 
     });
@@ -126,7 +129,7 @@ botonComprar.addEventListener("click", () => {
     let enviarFormulario = document.getElementById("enviarFormulario");
     enviarFormulario.addEventListener("click", (event) => {
         event.preventDefault();
-        Swal.fire('Gracias por adquirir los servicios. Su compra fue procesada.')
+        Swal.fire(registroStorage.nombreUsuario + ' gracias por adquirir los servicios. Su compra fue procesada.')
     });
 })
 
