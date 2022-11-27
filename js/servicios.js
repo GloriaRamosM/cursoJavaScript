@@ -1,4 +1,10 @@
 
+let registroStorage = JSON.parse(localStorage.getItem("registro"));
+
+if (!registroStorage || !registroStorage.email) {
+    window.location = "/paginas/registro.html"
+}
+
 
 // ARRAY Y UN OBJETO DENTRO DEL ARRAY, DONDE TENGO PLASMADOS LOS SERVICIOS QUE OFRECE EL SITIO
 

@@ -1,3 +1,12 @@
+
+let registroStorage = JSON.parse(localStorage.getItem("registro"));
+
+if (!registroStorage || !registroStorage.email) {
+    window.location = "/paginas/registro.html"
+}
+
+
+
 let diagnosticoTLP = 0;
 let criteriosTLP = 0;
 let noHayTLP = 0;
