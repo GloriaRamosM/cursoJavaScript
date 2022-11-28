@@ -16,6 +16,6 @@ botonRegistro.addEventListener("click", (event) => {
 
     Swal.fire("Hola "  + nombreUsuario + ", bienvenide al lugar donde acompanamos a los pacientes y familiares de personas con TLP.")
     .then(() => {
-        window.location = "/paginas/test.html";
+        window.location = "./test.html";
     });
 });
