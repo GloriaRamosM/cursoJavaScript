@@ -14,8 +14,9 @@ botonRegistro.addEventListener("click", (event) => {
 
     localStorage.setItem("registro", JSON.stringify(formularioUsuario));
 
-    Swal.fire("Hola "  + nombreUsuario + ", bienvenide al lugar donde acompanamos a los pacientes y familiares de personas con TLP.")
+    !email ? Swal.fire("Hola, debes ingresar una direccion de correo para continuar") :  Swal.fire("Hola " + nombreUsuario + ", bienvenide al lugar donde acompanamos a los pacientes y familiares de personas con TLP.")
     .then(() => {
         window.location = "./test.html";
     });
+    
 });
