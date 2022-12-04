@@ -126,39 +126,39 @@ botonComprar.addEventListener("click", () => {
         </form>
     `;
 
-    let numeroTarjeta = document.getElementById("numeroTarjeta").value;
-    let nombreCompleto = document.getElementById("nombreCompleto").value;
-    let CVV = document.getElementById("CVV").value;
-    let vencimiento = document.getElementById("vencimiento").value;
 
 
 
     let enviarFormulario = document.getElementById("enviarFormulario");
     enviarFormulario.addEventListener("click", (event) => {
         event.preventDefault();
+
+
+        let numeroTarjeta = document.getElementById("numeroTarjeta").value;
+        let nombreCompleto = document.getElementById("nombreCompleto").value;
+        let CVV = document.getElementById("CVV").value;
+        let vencimiento = document.getElementById("vencimiento").value;
+
+
+
+        if (!numeroTarjeta) {
+            Swal.fire("Debes ingresar tu numero de tarjeta para continuar")
+            return
+        }
+        if (!nombreCompleto) {
+            Swal.fire("Debes ingresar tu nombre completo para continuar")
+            return
+        }
+        if (!CVV) {
+            Swal.fire("Debes ingresar el CVV de tu tarjeta para continuar")
+            return
+        }
+        if (!vencimiento) {
+            Swal.fire("Debes ingresar la fecha de vencimiento de tu tarjeta para continuar")
+            return
+        }
         Swal.fire(registroStorage.nombreUsuario + ' gracias por adquirir los servicios. Su compra fue procesada.')
-       
-       
-        /*
-                if (!numeroTarjeta) {
-                    Swal.fire("Debes ingresar tu numero de tarjeta para continuar")
-                    return
-                }
-                if (!nombreCompleto) {
-                    Swal.fire("Debes ingresar tu nombre completo para continuar")
-                    return
-                }
-                if (!CVV) {
-                    Swal.fire("Debes ingresar el CVV de tu tarjeta para continuar")
-                    return
-                }
-                if (!vencimiento) {
-                    Swal.fire("Debes ingresar la fecha de vencimiento de tu tarjeta para continuar")
-                    return
-                } else {
-                    Swal.fire(registroStorage.nombreUsuario + ' gracias por adquirir los servicios. Su compra fue procesada.')
-                }
-        */
+
 
     });
 
