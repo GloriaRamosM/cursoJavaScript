@@ -11,6 +11,7 @@ let noHayTLP = 0;
 
 // PREGUNTA 1
 
+
 let a = document.getElementById("deAcuerdo1");
 a.addEventListener("click", () => {
     diagnosticoTLP++
@@ -53,6 +54,8 @@ f.addEventListener("click", () => {
     return
 });
 
+
+
 // PREGUNTA 3   
 
 let g = document.getElementById("deAcuerdo3");
@@ -73,6 +76,8 @@ i.addEventListener("click", () => {
     noHayTLP++
     return
 });
+
+
 
 // PREGUNTA 4
 
@@ -116,6 +121,8 @@ o.addEventListener("click", () => {
     return
 });
 
+
+
 // PREGUNTA 6 
 
 let p = document.getElementById("deAcuerdo6");
@@ -136,6 +143,9 @@ r.addEventListener("click", () => {
     noHayTLP++
     return
 });
+
+
+
 
 // PREGUNTA 7
 
@@ -158,6 +168,8 @@ u.addEventListener("click", () => {
     return
 });
 
+
+
 // PREGUNTA 8
 
 let v = document.getElementById("deAcuerdo8");
@@ -179,6 +191,8 @@ x.addEventListener("click", () => {
     return
 });
 
+
+
 // PREGUNTA 9
 
 let y = document.getElementById("deAcuerdo9");
@@ -198,6 +212,8 @@ aa.addEventListener("click", () => {
     noHayTLP++
     return
 });
+
+
 
 
 function darResultados() {
