@@ -39,6 +39,36 @@ p {
   color: black;
 }
 
+.bgRegistro {
+  background-color: #F4ECF7;
+}
+
+.itemNombre {
+  padding: 10px;
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+}
+
+.itemEmail {
+  padding: 10px;
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+}
+
+.itemContrasena {
+  padding: 10px;
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+}
+
+.botonRegistroF {
+  background-color: #D2B4DE;
+  border: none !important;
+  margin: 10px;
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+}
+
 .bgcolorindex {
   background-color: #F4F6FB;
 }

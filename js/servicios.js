@@ -36,7 +36,7 @@ const renderPagina = (servicios) => {
         let div = document.createElement("div");
         div.innerHTML = `
     
-        <p> Servicio: ${nombre}</p>
+        <p> Servicio: ${nombre}  </p>
         <b>$${precio}</b>
         <button class="botonComprar" id="${id}" > Agregar </button>
         

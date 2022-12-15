@@ -1,27 +1,27 @@
 [
     {
         "id": 1,
-        "nombre": "consulta psicologica",
+        "nombre": "Consulta psicologica",
         "precio": 1500
     },
     {
         "id": 2,
-        "nombre": "consulta psiquiatrica",
+        "nombre": "Consulta psiquiatrica",
         "precio": 1800
     },
     {
         "id": 3,
-        "nombre": "seminario psicoeducativo",
+        "nombre": "Seminario psicoeducativo",
         "precio": 1200
     },
     {
         "id": 4,
-        "nombre": "grupo de apoyo",
+        "nombre": "Grupo de apoyo",
         "precio": 700
     },
     {
         "id": 5,
-        "nombre": "evaluacion diagnostica",
+        "nombre": "Evaluacion diagnostica",
         "precio": 850
     }
 ]
